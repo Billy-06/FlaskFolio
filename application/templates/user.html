@@ -1,0 +1,27 @@
+{% extends "./includes/base.html" %}
+
+<!-- Page title -->
+{% block title %}
+User | My App
+{% endblock %}
+
+<!-- Page Greeting -->
+{% block page_greeting %}
+{{ user.username }}
+{% endblock %}
+
+<!-- Page Message -->
+{% block page_message %}
+Wanna know more about {{ user.username }}?
+{% endblock %}
+
+<!-- Page content -->
+{% block content %}
+{% if error %}
+<p class="error">{{ error }}</p>
+{% endif %}
+
+<h1>User</h1>
+<p>Username: {{ user.username }}</p>
+<p>Email: {{ user.email }}</p>
+{% endblock %}

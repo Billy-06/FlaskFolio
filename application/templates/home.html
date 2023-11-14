@@ -1,0 +1,55 @@
+{% extends "./includes/base.html" %}
+
+<!-- Page title -->
+{% block title %}
+Home | My App
+{% endblock %}
+
+<!-- Page Greeting -->
+{% block page_greeting %}
+Welcome to my Application Homepage
+{% endblock %}
+
+<!-- Page Message -->
+{% block page_message %}
+This is where you can find all the information about me working on this project.
+{% endblock %}
+
+<!-- Page content -->
+{% block content %}
+<div class="container position-relative zindex-5 pt-5">
+    <div class="row">
+        <div class="col-lg-6">
+
+            <!-- Text -->
+            <h1 class="pb-2 pb-md-3">About Me</h1>
+            <p class="fs-xl pb-4 mb-1 mb-md-2 mb-lg-3" style="max-width: 526px;">
+                We are a dedicated team of passionate
+                product managers, full stack developers, UX/UI designers, QA engineers and marketing experts helping
+                businesses of every size — from new startups to public companies — launch their projects using our
+                software.
+            </p>
+            <p class="fs-xl pb-4 mb-1 mb-md-2 mb-lg-3" style="max-width: 526px;">
+                We are a dedicated team of passionate
+                product managers, full stack developers, UX/UI designers, QA engineers and marketing experts helping
+                businesses of every size — from new startups to public companies — launch their projects using our
+                software.
+            </p>
+        </div>
+
+        <!-- Images -->
+        <div class="col-lg-6 mt-xl-3 pt-5 pt-lg-4">
+            <div class="row row-cols-2 gx-3 gx-lg-4">
+                <div class="col pt-lg-5 mt-lg-1">
+                    <img src="{{ url_for('static', filename='images/billy.jpg') }}"
+                        class="d-block rounded-3 mb-3 mb-lg-4" alt="Image">
+                </div>
+                <div class="col">
+                    <img src="{{ url_for('static', filename='images/billy.jpg') }}"
+                        class="d-block rounded-3 mb-3 mb-lg-4" alt="Image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

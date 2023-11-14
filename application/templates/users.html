@@ -1,0 +1,49 @@
+{% extends "./includes/base.html" %}
+
+<!-- Page title -->
+{% block title %}
+Users | My App
+{% endblock %}
+
+<!-- Page Heading -->
+{% block page_greeting %}
+Here's the Community!
+{% endblock %}
+
+<!-- Page Message -->
+{% block page_message %}
+Welcome to the users page!
+{% endblock %}
+
+<!-- Page content -->
+{% block content %}
+<div class="container">
+    <h1>Users</h1>
+    <div class="d-flex justify-content-center flex-wrap">
+        {% for user in users %}
+        <div class="card mb-3 mx-2" style="max-width: 500px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{ url_for('static', filename='images/billy.jpg') }}" class="img-fluid rounded-start"
+                        alt="Just an image">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ user.username }}</h3>
+                        <h5 class="card-title">{{ user.email }}</h5>
+                        <p class="card-text">
+                            {{ user.about_me | truncate(100) }}
+                        </p>
+                        <p class="card-text">
+                            <small class="text-body-secondary">
+                                {{ user.last_seen }}
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

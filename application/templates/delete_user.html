@@ -1,0 +1,34 @@
+{% extends "./includes/base.html" %}
+
+<!-- Page title -->
+{% block title %}
+Delete User | My App
+{% endblock %}
+
+
+<!-- Page content -->
+{% block page_greeting %}
+Delete User
+{% endblock %}
+
+<!-- Page content -->
+{% block page_message %}
+This page is used to delete a user.
+{% endblock %}
+
+<!-- Page content -->
+{% block content %}
+{% if error %}
+<p class="error">{{ error }}</p>
+{% endif %}
+
+<form action="{{ url_for('delete_user', id=user.id) }}" method="post">
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" value="{{ user.username }}">
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" value="{{ user.email }}">
+
+    <input type="submit" value="Delete user">
+</form>
+{% endblock %}

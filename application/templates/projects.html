@@ -1,0 +1,41 @@
+{% extends "./includes/base.html" %}
+
+<!-- Page Title -->
+{% block title %}
+Projects| My App
+{% endblock %}
+
+<!-- Page Greeting -->
+{% block page_greeting %}
+Welcome to the projects page!
+{% endblock %}
+
+<!-- Page Message -->
+{% block page_message %}
+Check out some of the fun stuff I've been woking on!
+{% endblock %}
+
+<!-- Page Content -->
+{% block content %}
+<!-- Projects Model -->
+<div class="container">
+    <div class="row-cols-2">
+        <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" title="YouTube video"
+                allowfullscreen></iframe>
+        </div>
+
+    </div>
+</div>
+{#
+{% for project in projects %}
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ project.title }}</h5>
+        <p class="card-text">{{ project.description }}</p>
+        <a href="{{ url_for('projects.project', project_id=project.id) }}" class="btn btn-primary">View Project</a>
+    </div>
+</div>
+{% endfor %}
+#}
+{% endblock %}

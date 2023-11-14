@@ -1,0 +1,38 @@
+{% extends "./includes/base.html" %}
+
+<!-- Page Title -->
+{% block title %}
+Register | My App
+{% endblock %}
+
+<!-- Page Greeting -->
+{% block page_greeting %}
+Join The Club and Register!
+{% endblock %}
+
+<!-- Page Message -->
+{% block page_message %}
+Joining helps you keep track of your favorite projects and games!
+{% endblock %}
+
+
+<!-- Page Content -->
+{% block content %}
+{% if error %}
+<p class="error">{{ error }}</p>
+{% endif %}
+<h1>Register</h1>
+
+<!-- Registration Form -->
+<form action="{{ url_for('register') }}" method="post">
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" placeholder="Username" required>
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" placeholder="Email" required>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" placeholder="Password" required>
+    <label for="confirm_password">Confirm Password</label>
+    <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" required>
+    <input type="submit" value="Register">
+</form>
+{% endblock %}
